@@ -1,28 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import { Button, Image } from "antd";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { getDataDisplay } from "../../api/apiDisplay";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
-import { AppContext } from "../AppContext/AppContext";
+import ButtonBanner from "../Button/Button";
 
 // { banner }
-function BannerEnglishAcademic() {
-  const { data, dispatch } = useContext(AppContext);
-
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items[26]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
+async function BannerEnglishAcademic() {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[26];
+  }
   return (
     <>
       <div className="w-[100vw] relative">
@@ -41,15 +28,7 @@ function BannerEnglishAcademic() {
           <p className="text-[4.5rem] font-[500] line-clamp-6 h-[41rem">
             {banner.description}
           </p>
-          <Button
-            className="custom-btn uppercase font-[600] mt-[5rem] hover:border-none"
-            onClick={() => {
-              showModalConsulting();
-            }}
-          >
-            đăng ký tư vấn
-          </Button>
-          <RegisterAccountModal />
+          <ButtonBanner />
         </div>
       </div>
     </>

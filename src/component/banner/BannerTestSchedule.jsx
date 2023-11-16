@@ -1,26 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import { Button } from "antd";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { getDataDisplay } from "@/api/apiDisplay";
-import { AppContext } from "../AppContext/AppContext";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import ButtonBanner from "../Button/Button";
 
-function BannerTestSchedule(props) {
-  const { data, dispatch } = useContext(AppContext);
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items[30]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
+async function BannerTestSchedule(props) {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[30];
+  }
+
   return (
     <>
       <div className="relative">
@@ -37,16 +26,9 @@ function BannerTestSchedule(props) {
             <p className="text-center w-1/2 mx-auto line-clamp-3 text-[#fff] my-[5%] font-[500px] text-[4.5rem]">
               {banner.description}
             </p>
-
-            <Button
-              className="custom-btn block mx-auto"
-              onClick={() => {
-                showModalConsulting();
-              }}
-            >
-              ĐĂNG KÝ TƯ VẤN
-            </Button>
-            <RegisterAccountModal />
+            <div className="w-[35rem] my-[0px] mx-[auto] ">
+              <ButtonBanner />
+            </div>
           </div>
         </div>
       </div>

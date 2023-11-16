@@ -1,14 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import Image from "next/image";
-import React, { useContext } from "react";
-import { Button } from "antd";
-import { AppContext } from "../AppContext/AppContext";
+import React from "react";
+import ButtonBanner from "../Button/Button";
 function BannerAptis({ banner }) {
-  const { data, dispatch } = useContext(AppContext);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
   return (
     <div className="bg-[#FFF4E5]">
       <div className="max-w-[1440px] mx-[auto]">
@@ -27,15 +20,8 @@ function BannerAptis({ banner }) {
               <h2 className="uppercase text-[black]">{banner.title}</h2>
               <br />
               <p>{banner.description}</p>
-              <div className="flex items-center">
-                <Button
-                  className="custom-btn mt-[10%] "
-                  onClick={() => {
-                    showModalConsulting();
-                  }}
-                >
-                  ĐĂNG KÝ TƯ VẤN
-                </Button>
+              <div className="flex items-center ml-[30rem] mt-[16px] ">
+                <ButtonBanner />
               </div>
             </div>
           </div>

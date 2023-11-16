@@ -59,7 +59,9 @@ async function PageAptisB1(props) {
             <AnotherCoures />
           </>
           <>
-            <h2 className="title">Đăng ký nhận tư vấn</h2>
+            <h2 className="title" id="resgister">
+              Đăng ký nhận tư vấn
+            </h2>
             <FormRegister />
           </>
         </div>

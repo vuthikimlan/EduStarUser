@@ -32,7 +32,7 @@ function FormRegister() {
     console.log("Failed:", errorInfo);
   };
   return (
-    <>
+    <div>
       <Form
         name="basic"
         initialValues={{
@@ -126,7 +126,7 @@ function FormRegister() {
           </Button>
         </Form.Item>
       </Form>
-    </>
+    </div>
   );
 }
 

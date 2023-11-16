@@ -1,25 +1,13 @@
-"use client";
-import { Button } from "antd";
-import React, { useContext, useEffect, useState } from "react";
-import { AppContext } from "../AppContext/AppContext";
+import React from "react";
 import { getDataDisplay } from "@/api/apiDisplay";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import ButtonBanner from "../Button/Button";
 
-function BannerVstepB1() {
-  const { data, dispatch } = useContext(AppContext);
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items[32]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
+async function BannerVstepB1() {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[32];
+  }
   return (
     <div>
       <div className="w-[100vw] h-[50vh] relative">
@@ -31,15 +19,10 @@ function BannerVstepB1() {
           <p className="text-[4rem] font-[400] text-[#000000] line-clamp-4 h-[110px] px-[20%] text-center">
             {banner.description}
           </p>
-          <Button
-            className="custom-btn mx-auto block mt-[5rem] uppercase"
-            onClick={() => {
-              showModalConsulting();
-            }}
-          >
-            Đăng ký tư vấn
-          </Button>
-          <RegisterAccountModal />
+
+          <div className=" w-[36rem] mt-[10px] mb-[0] mx-[auto] ">
+            <ButtonBanner />
+          </div>
         </div>
       </div>
     </div>

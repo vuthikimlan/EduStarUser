@@ -21,13 +21,9 @@ async function PageDetailNews({ params }) {
     sortedNews = news.sort(
       (a, b) => new Date(b.createdDate) - new Date(a.createdDate)
     );
-    // console.log(sortedNews);
 
     latestNews = sortedNews.slice(0, 7);
-    // console.log("latestNews", latestNews);
   }
-
-  // console.log(params.id);
 
   return (
     <div className="mx-auto max-w-[1440px]">

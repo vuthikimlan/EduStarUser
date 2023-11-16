@@ -25,7 +25,9 @@ async function PageStudySchedule() {
       </div>
       <RegisterCourseVstep />
       <div className="max-w-[1440px] mx-[10%] ">
-        <h2 className="title">Đăng ký nhận tư vấn </h2>
+        <h2 className="title" id="resgister">
+          Đăng ký nhận tư vấn{" "}
+        </h2>
         <FormRegister />
         <h2 className="title">Tin Tức </h2>
         <New />

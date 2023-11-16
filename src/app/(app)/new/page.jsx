@@ -17,7 +17,10 @@ async function PageDashbroad() {
             </h2>
             <NewList />
 
-            <h2 className="text-[10rem] font-[500] text-center my-[10rem] break-before-column text-[#f79500]">
+            <h2
+              id="resgister"
+              className="text-[10rem] font-[500] text-center my-[10rem] break-before-column text-[#f79500]"
+            >
               Đăng ký nhận tư vấn
             </h2>
             <FormRegister />

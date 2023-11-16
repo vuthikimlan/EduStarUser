@@ -57,7 +57,9 @@ async function PageVstepB1(props) {
           </>
           <h2 className="title"> Các chương trình học khác</h2>
           <AnotherCoures />
-          <h2 className="title">Đăng ký nhận tư vấn </h2>
+          <h2 className="title" id="resgister">
+            Đăng ký nhận tư vấn{" "}
+          </h2>
           <FormRegister />
         </div>
       </div>

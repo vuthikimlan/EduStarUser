@@ -1,27 +1,15 @@
-"use client";
-import { Button } from "antd";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
-import { AppContext } from "../AppContext/AppContext";
+import React from "react";
 import { getDataDisplay } from "@/api/apiDisplay";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import ButtonBanner from "../Button/Button";
 // { banner }
-function BannerIelts() {
-  const { data, dispatch } = useContext(AppContext);
-  const [banner, setBanner] = useState([]);
+async function BannerIelts() {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items.slice(18, 19);
+  }
 
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items.slice(18, 19));
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
   return banner.map((item) => (
     <div key={1} className="grid tablet:grid-cols-2 phone:grid-col-1 shadow-xl">
       <div className="col-span-1 max-h-[500px] phone: tablet:block">
@@ -42,16 +30,9 @@ function BannerIelts() {
           <p className="py-auto block  font-[400] text-[4rem]">
             {item.description}
           </p>
-          <Button
-            className="ml-auto block my-[5%] mr-[20rem] bg-[#FB9400] shadow-md hover:scale-[1.1] text-[#fff] hover:border-none border-none "
-            onClick={() => {
-              showModalConsulting();
-            }}
-          >
-            {" "}
-            Đăng ký tư vấn
-          </Button>
-          <RegisterAccountModal />
+          <div className="w-[34%] mt-[10px] mx-[auto] ">
+            <ButtonBanner />
+          </div>
         </div>
       </div>
     </div>

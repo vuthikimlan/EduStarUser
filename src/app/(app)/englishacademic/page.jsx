@@ -55,7 +55,9 @@ async function PageEnglishAcademic(props) {
           </>
 
           <>
-            <h2 className="title">Đăng ký nhận tư vấn </h2>
+            <h2 className="title" id="resgister">
+              Đăng ký nhận tư vấn{" "}
+            </h2>
 
             <FormRegister />
           </>

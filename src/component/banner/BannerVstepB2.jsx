@@ -1,25 +1,22 @@
-"use client";
-import React, { useContext, useEffect, useState } from "react";
-import { Button } from "antd";
-import { AppContext } from "../AppContext/AppContext";
+import React from "react";
 import { getDataDisplay } from "@/api/apiDisplay";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import ButtonBanner from "../Button/Button";
 
-function BannerVstepB2() {
-  const { data, dispatch } = useContext(AppContext);
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items[33]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
+async function BannerVstepB2() {
+  // useEffect(() => {
+  //   getDataDisplay()
+  //     .then((data) => {
+  //       setBanner(data?.data?.items[33]);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[33];
+  }
   return (
     <div className=" bg-[#FFF4E5] grid grid-cols-2 ">
       <div className=" phone:col-span-2 px-[10%]  laptop:col-span-1">
@@ -28,7 +25,7 @@ function BannerVstepB2() {
         </h1>
         <p className="leading-[9rem] font-[400]">{banner.description}</p>
         <div className="flex justify-center">
-          <Button
+          {/* <Button
             className="uppercase  custom-btn  mt-[5%] mb-[10%]"
             onClick={() => {
               showModalConsulting();
@@ -36,7 +33,10 @@ function BannerVstepB2() {
           >
             đăng ký tư vấn
           </Button>
-          <RegisterAccountModal />
+          <RegisterAccountModal /> */}
+          <div className="mt-[16%] mr-[15rem] ">
+            <ButtonBanner />
+          </div>
         </div>
       </div>
       <div className=" laptop:col-span-1 hidden laptop:block ">

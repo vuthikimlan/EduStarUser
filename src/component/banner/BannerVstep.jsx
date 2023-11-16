@@ -1,21 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import pic from "public/ctr_3 1.png";
+import ButtonBanner from "../Button/Button";
 function BannerVstep({ banner }) {
+  console.log("banner", banner);
   return (
     <div className="grid bg-[#fff4e5] tablet:grid-cols-2 phone:grid-col-1 px-[10%] ">
       <div className="col-span-1 max-h-[500px] phone: tablet:block ">
         <div className="flex justify-end">
-          <Image
-            src={banner.image}
-            alt="pic"
-            width={600}
-            height={410}
-            // layout="fill"
-            // objectFit="cover"
-            // objectPosition="center"
-            // className="flex-end object-cover "
-          />
+          <Image src={banner.image} alt="pic" width={600} height={410} />
         </div>
       </div>
       <div className="col-span-1 ">
@@ -26,6 +19,9 @@ function BannerVstep({ banner }) {
           <p className="py-auto block px-[10rem] font-[400] text-[4rem]">
             {banner.description}
           </p>
+          <div className=" ml-[30%] mt-[10rem] ">
+            <ButtonBanner />
+          </div>
         </div>
       </div>
     </div>

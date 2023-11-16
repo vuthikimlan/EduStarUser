@@ -71,7 +71,7 @@ async function PageToeic(props) {
             </h2>
             <AnotherCoures />
           </div>
-          <div>
+          <div id="resgister">
             <h2 className="title">Đăng ký tư vấn</h2>
             <FormRegister />
           </div>

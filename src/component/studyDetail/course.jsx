@@ -1,14 +1,10 @@
-"use client";
+// "use client";
 import { Button, Col } from "antd";
 import { useContext } from "react";
 import { AppContext } from "../AppContext/AppContext";
-import FormRegister from "../form/FormRegister";
+import ButtonScroll from "../Button/ButtonScroll";
 
 function Course({ service }) {
-  const { data, dispatch } = useContext(AppContext);
-  const showConsultinRegister = () => {
-    dispatch({ type: "consultingRegisterOpen" });
-  };
   return (
     <div>
       <Col
@@ -42,14 +38,15 @@ function Course({ service }) {
           <div className="flex my-[10px] gap-[5px] items-baseline ">
             {service?.description}
           </div>
-          <Button
+          {/* <Button
             className="mx-auto block  bg-primaryColor custom-btn uppercase hover:text-[#fff]"
             onClick={() => {
               showConsultinRegister();
             }}
           >
             Đăng ký học{" "}
-          </Button>
+          </Button> */}
+          <ButtonScroll />
         </div>
       </Col>
     </div>

@@ -1,26 +1,16 @@
-"use client";
-import { Button, Col, Row } from "antd";
+// "use client";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
-import { AppContext } from "../AppContext/AppContext";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import React from "react";
 import { getDataDisplay } from "@/api/apiDisplay";
+import ButtonBanner from "../Button/Button";
 
-function BannerToeic() {
-  const { data, dispatch } = useContext(AppContext);
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items.slice(25, 26));
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
+async function BannerToeic() {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items.slice(25, 26);
+  }
+
   return banner.map((item, ind) => (
     <>
       <div key={ind}>
@@ -45,16 +35,9 @@ function BannerToeic() {
               <p className="py-auto block  font-[400] text-[4rem]">
                 {item.description}
               </p>
-              <Button
-                className="ml-auto block my-[5%]  bg-[#FB9400] shadow-md hover:scale-[1.1] text-[#fff] hover:border-none border-none "
-                onClick={() => {
-                  showModalConsulting();
-                }}
-              >
-                {" "}
-                Đăng ký tư vấn
-              </Button>
-              <RegisterAccountModal />
+              <div className="w-[25%] mt-[10px] mx-[auto] ">
+                <ButtonBanner className="ml-auto block my-[5%]  bg-[#FB9400] shadow-md hover:scale-[1.1] text-[#fff] hover:border-none border-none " />
+              </div>
             </div>
           </div>
         </div>

@@ -1,29 +1,15 @@
-"use client";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
-import { Button } from "antd";
+import React from "react";
 import { getDataDisplay } from "../../api/apiDisplay";
-import { AppContext } from "../AppContext/AppContext";
-import RegisterAccountModal from "../modal/RegisterAccountModal";
+import ButtonBanner from "../Button/Button";
 
 // { banner }
-function BannerAptisB1() {
-  const { data, dispatch } = useContext(AppContext);
-
-  const [banner, setBanner] = useState([]);
-  useEffect(() => {
-    getDataDisplay()
-      .then((data) => {
-        setBanner(data?.data?.items[34]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const showModalConsulting = () => {
-    dispatch({ type: "modalRegisterAccOpen" });
-  };
-  console.log("banner", banner);
+async function BannerAptisB1() {
+  const res = await getDataDisplay();
+  let banner = {};
+  if (res) {
+    banner = res?.data?.items[34];
+  }
   return (
     <div className="bg-[#FFF4E5]">
       <div className="max-w-[1440px] mx-[auto]">
@@ -34,15 +20,7 @@ function BannerAptisB1() {
               <br />
               <p>{banner.description}</p>
               <div className="flex items-center">
-                <Button
-                  className="custom-btn mt-[10%]"
-                  onClick={() => {
-                    showModalConsulting();
-                  }}
-                >
-                  ĐĂNG KÝ TƯ VẤN
-                </Button>
-                <RegisterAccountModal />
+                <ButtonBanner />
               </div>
             </div>
           </div>

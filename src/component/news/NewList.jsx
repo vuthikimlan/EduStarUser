@@ -40,9 +40,7 @@ function NewList(props) {
               <p
                 dangerouslySetInnerHTML={{ __html: item.content }}
                 className="text-[#333]  line-clamp-3 mb-[3rem]"
-              >
-                {/* {item.content} */}
-              </p>
+              ></p>
               <Button
                 className="block ml-auto bg-[#FB9400] hover:bg-[#ffc00d] !important"
                 type="primary"

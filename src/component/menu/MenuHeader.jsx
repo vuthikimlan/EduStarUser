@@ -54,11 +54,9 @@ const MenuHeader = () => {
           },
         },
         {
-          label: "Luyện thi APTIS",
+          label: <Link href="/aptis">LUYỆN THI APTIS</Link>,
           key: "5",
-          // onClick: () => {
-          //   router.push("/aptis");
-          // },
+
           children: [
             {
               label: "Luyện thi APTIS B1",
@@ -77,7 +75,7 @@ const MenuHeader = () => {
           ],
         },
         {
-          label: "Luyện thi VSTEP",
+          label: <Link href="/vstep">LUYỆN THI VSTEP</Link>,
           key: "8",
           // onClick: () => {
           //   router.push("/vstep");

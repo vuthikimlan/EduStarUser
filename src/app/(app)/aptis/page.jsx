@@ -10,19 +10,6 @@ import { getDataDisplay } from "@/api/apiDisplay";
 import { getAllService } from "@/api/apiService";
 // XPathEvaluator;
 async function PageAptis() {
-  // const inforCourses = [
-  //   {
-  //     title: "Khóa ôn B1",
-  //     content:
-  //       "Vận dụng thành thạo các chiến lược thi VSTEP Có kĩ năng viết tiếng Anh học thuật nhằm làm tốt các dạng bài viết trong kì thi. Có kĩ năng đọc hiểu tiếng Anh nhanh và hiệu quả.  Có kĩ năng nghe một cách hiệu quả với các chiến lược làm bài thi nghe.  Mở rộng vốn từ và phát triển kĩ năng tìm ý khi viết hay nói.  Thành thạo nhiều chủ đề nói thực tế, đa dạng, nâng cao sự tự tin trong giao tiếp.  Trải nghiệm với các bài thi thử theo định dạng VSTEP.",
-  //   },
-  //   {
-  //     title: "Khóa ôn B2",
-  //     content:
-  //       "Vận dụng thành thạo các chiến lược thi VSTEP Có kĩ năng viết tiếng Anh học thuật nhằm làm tốt các dạng bài viết trong kì thi. Có kĩ năng đọc hiểu tiếng Anh nhanh và hiệu quả.  Có kĩ năng nghe một cách hiệu quả với các chiến lược làm bài thi nghe.  Mở rộng vốn từ và phát triển kĩ năng tìm ý khi viết hay nói.  Thành thạo nhiều chủ đề nói thực tế, đa dạng, nâng cao sự tự tin trong giao tiếp.  Trải nghiệm với các bài thi thử theo định dạng VSTEP.",
-  //   },
-  // ];
-
   const res = await getDataDisplay();
   let adList = [];
   let banner = {};
@@ -64,7 +51,9 @@ async function PageAptis() {
           </h2>
           <AnotherCoures />
 
-          <h2 className="title">Đăng ký nhận tư vấn </h2>
+          <h2 className="title" id="resgister">
+            Đăng ký nhận tư vấn{" "}
+          </h2>
           <FormRegister />
         </div>
       </div>

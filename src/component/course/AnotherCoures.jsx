@@ -55,7 +55,7 @@ function AnotherCoures() {
                 span={22}
                 className="hover:scale-x-[1.2] hover:scale-y-[1.3] h-[450px] hover:delay-100 hover:duration-300 hover:ease-in-out"
               >
-                <Link href="aaa">
+                <Link href="aaa" >
                   <img
                     src={item.image}
                     alt="anh"
