@@ -3,12 +3,7 @@ import axios from "./axios";
 
 
 export const getAllDocument = async (params) => {
-  const response = await fetch('https://api.edustar.com.vn/document/all', {
-      method: "GET",
-      headers:{
-        'ngrok-skip-browser-warning': '1'
-      }
-    }); 
+  const response = await fetch('https://api.edustar.com.vn/document/all'); 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }

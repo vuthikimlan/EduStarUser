@@ -4,12 +4,7 @@ import axios from "./axios";
 
 export const getAllNews = async (params) => {
   
-  const response = await fetch('https://api.edustar.com.vn/news/all', {
-      method: "GET",
-      headers:{
-        'ngrok-skip-browser-warning': '1'
-      }
-    }); 
+  const response = await fetch('https://api.edustar.com.vn/news/all'); 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -17,12 +12,7 @@ export const getAllNews = async (params) => {
     return data;
 };
 export const getNewsById = async (id) => {
-  const response = await fetch(`https://api.edustar.com.vn/news/${id}`, {
-      method: "GET",
-      headers:{
-        'ngrok-skip-browser-warning': '1'
-      }
-    }); 
+  const response = await fetch(`https://api.edustar.com.vn/news/${id}`); 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
