@@ -10,7 +10,7 @@ export const registerAuthen = (values) =>{
         phone: values?.phone,
         email: values?.email,
         // link: "http://34.171.75.213:9999/user/auth/verify"
-        link: "http://localhost:3000/users/auth/verify"
+        link: "https://edustar-user.vercel.app/users/auth/verify"
     }
     // return axiosServer.post("/user/auth/register", register)
     return axios.post("/user/auth/register", register)
