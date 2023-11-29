@@ -11,7 +11,7 @@ async function Carousels(props) {
   }
 
   return (
-    <div>
+    <div className="mt-[51px] ">
       <Carousel autoplay>
         {banner?.map((item, index) => (
           <div

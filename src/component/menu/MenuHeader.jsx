@@ -36,67 +36,71 @@ const MenuHeader = () => {
       },
     },
     {
-      label: "CHƯƠNG TRÌNH ĐÀO TẠO ANH NGỮ",
-      // key: "user",
+      label: (
+        <Link href={`https://etestuser-4ec97.web.app/?jwt=${jwt}&id=${id}`}>
+          THI THỬ{" "}
+        </Link>
+      ),
+      key: "2",
+    },
+    {
+      label: "KHÓA HỌC",
       children: [
         {
-          label: "Luyện thi TOEIC",
+          label: <Link href="/vstep">Luyện thi VSTEP</Link>,
           key: "3",
-          onClick: () => {
-            router.push("/toeic");
-          },
-        },
-        {
-          label: "Luyện thi IELTS",
-          key: "4",
-          onClick: () => {
-            router.push("/ielts");
-          },
-        },
-        {
-          label: <Link href="/aptis">LUYỆN THI APTIS</Link>,
-          key: "5",
-
-          children: [
-            {
-              label: "Luyện thi APTIS B1",
-              key: "6",
-              onClick: () => {
-                router.push("/aptis/luyen-thi-b1");
-              },
-            },
-            {
-              label: "Luyện thi APTIS B2",
-              key: "7",
-              onClick: () => {
-                router.push("/aptis/luyen-thi-b2");
-              },
-            },
-          ],
-        },
-        {
-          label: <Link href="/vstep">LUYỆN THI VSTEP</Link>,
-          key: "8",
-          // onClick: () => {
-          //   router.push("/vstep");
-          // },
           children: [
             {
               label: "Luyện thi VSTEP B1",
-              key: "9",
+              key: "4",
               onClick: () => {
                 router.push("/vstep/luyen-thi-b1");
               },
             },
             {
               label: "Luyện thi VSTEP B2",
-              key: "10",
+              key: "5",
               onClick: () => {
                 router.push("/vstep/luyen-thi-b2");
               },
             },
           ],
         },
+        {
+          label: "Luyện thi TOEIC",
+          key: "6",
+          onClick: () => {
+            router.push("/toeic");
+          },
+        },
+        {
+          label: "Luyện thi IELTS",
+          key: "7",
+          onClick: () => {
+            router.push("/ielts");
+          },
+        },
+        {
+          label: <Link href="/aptis">Luyện thi APTIS</Link>,
+          key: "8",
+          children: [
+            {
+              label: "Luyện thi APTIS B1",
+              key: "9",
+              onClick: () => {
+                router.push("/aptis/luyen-thi-b1");
+              },
+            },
+            {
+              label: "Luyện thi APTIS B2",
+              key: "10",
+              onClick: () => {
+                router.push("/aptis/luyen-thi-b2");
+              },
+            },
+          ],
+        },
+
         {
           label: "Anh Ngữ Học Thuật",
           key: "11",
@@ -107,7 +111,7 @@ const MenuHeader = () => {
       ],
     },
     {
-      label: "LỊCH THI",
+      label: "LỊCH THI VSTEP",
       key: "12",
       onClick: () => {
         router.push("/test-schedule");
@@ -127,17 +131,7 @@ const MenuHeader = () => {
         router.push("/new");
       },
     },
-    {
-      label: (
-        <Link href={`https://etestuser-4ec97.web.app/?jwt=${jwt}&id=${id}`}>
-          THI THỬ{" "}
-        </Link>
-      ),
-      key: "15",
-      // onClick: () => {
-      //   router.push("englishacademic");
-      // },
-    },
+
     {
       label: "ĐĂNG KÝ TƯ VẤN",
       key: "sub6",

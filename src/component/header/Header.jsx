@@ -86,7 +86,7 @@ function Header() {
   return (
     <div className="mx-auto fixed top-0 z-50 max-w-screen-2xl  ">
       <div>
-        <div className=" flex items-center w-[100vw] bg-white px-[39rem] phone:pl-[51rem] tablet:pl-[111rem]  phone:pt-[47px] laptop:pt-[50px] laptop:px-[128rem]  desktop:pt-[5px] desktop:pl-[63rem] ">
+        <div className=" flex items-center w-[100vw] bg-white px-[39rem] phone:pl-[51rem] tablet:pl-[111rem]  phone:pt-[47px] laptop:pt-[50px] laptop:px-[128rem]  desktop:pt-[5px] desktop:pl-[101rem] ">
           <div className="flex">
             <div>
               <div
@@ -98,9 +98,9 @@ function Header() {
                 <img
                   src="/logoCamTrongSuot.png"
                   alt="" //laptop:bottom-[-20px] laptop:left-[105rem]
-                  className="  h-[23rem]  phone:absolute phone:bottom-[-6rem] phone:left-[25rem] tablet:left-[56rem] tablet:block  laptop:left-[106rem]  desktop:left-[15rem] desktop:bottom-[-5rem]" //phone:hidden
+                  className="  h-[23rem]  phone:absolute phone:bottom-[-6rem] phone:left-[25rem] tablet:left-[56rem] tablet:block  laptop:left-[106rem]  desktop:left-[55rem] desktop:bottom-[-5rem]" //phone:hidden
                 />
-                <h2 className=" ml-[21rem] my-[6px] text-[#fb9400] mt-[9px] text-8xl font-medium  phone:ml-[-9rem]  phone:absolute phone:mt-[-31px] tablet:ml-[-38rem] laptop:ml-[-3rem]   desktop:left-[36rem]  desktop:top-[11rem]  ">
+                <h2 className=" ml-[21rem] my-[6px] text-[#fb9400] mt-[9px] text-8xl font-medium  phone:ml-[-9rem]  phone:absolute phone:mt-[-31px] tablet:ml-[-38rem] laptop:ml-[-3rem]   desktop:left-[74rem]  desktop:top-[12rem]  ">
                   EduStar
                 </h2>
               </div>

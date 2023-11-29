@@ -57,7 +57,7 @@ const LoginModal = () => {
           >
             <h2 className="font-black text-[32px] ">Đăng nhập</h2>
             <p className="font-normal text-[19.4px]">
-              Học tiếng anh cùng <br></br> E-Test mỗi ngày
+              Học tiếng anh cùng <br></br> EduStar mỗi ngày
             </p>
           </Col>
         </Row>

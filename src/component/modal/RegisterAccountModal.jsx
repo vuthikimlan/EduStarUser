@@ -57,7 +57,7 @@ const RegisterAccountModal = () => {
               Đăng ký tư vấn
             </h2>
             <p className="font-normal text-[19.4px]">
-              E-Test sẽ liên hệ với bạn sớm nhất có thể
+              EduStar sẽ liên hệ với bạn sớm nhất có thể
             </p>
           </Col>
         </Row>

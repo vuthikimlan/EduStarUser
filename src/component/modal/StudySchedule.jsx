@@ -18,7 +18,6 @@ const StudyScheduleDetailModal = () => {
   return (
     <>
       <Modal
-        // title="ĐĂNG NHẬP"
         open={modalStudyScheduleOpen}
         onCancel={handleCancel}
         className="max-h-[60%] tablet:w-[60%] phone:w-[80%]  "

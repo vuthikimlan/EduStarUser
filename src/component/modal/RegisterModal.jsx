@@ -72,7 +72,7 @@ const RegisterModal = () => {
           <Col span={15} className="text-white text-left my-[10px]">
             <h2 className="font-black text-[32px] leading-snug">Đăng ký</h2>
             <p className="font-normal text-[19.4px]">
-              Học tiếng anh với E-Test
+              Học tiếng anh với EduStar
             </p>
           </Col>
         </Row>

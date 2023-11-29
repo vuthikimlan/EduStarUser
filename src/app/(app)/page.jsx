@@ -4,19 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import "animate.css";
 import { Button, Col, Row } from "antd";
-import {
-  BarsOutlined,
-  CheckSquareFilled,
-  FolderFilled,
-  GithubOutlined,
-  LikeFilled,
-  UserSwitchOutlined,
-} from "@ant-design/icons";
 import StrengthDescription from "@/component/strengDescription/StrengDescription";
 import Sliders from "@/component/slider/Slider";
 import New from "@/component/news/New";
 import FormRegister from "@/component/form/FormRegister";
 import Carousels from "@/component/slider/Carousel";
+import PopUp from "@/component/PopUp/PopUp";
 import { getDataDisplay } from "@/api/apiDisplay";
 import { getNewsById } from "@/api/apiNews";
 
@@ -122,17 +115,14 @@ async function Home() {
             </div>
           </div>
         </div>
-
-        {/* Tin tức của trang web */}
-
         <div>
           <h2 className="text-[8rem] font-[500] text-center my-[10rem] break-before-column text-[#f79500]">
             Tin tức
           </h2>
           <New />
-          {/* newList={newList} */}
         </div>
       </div>
+      <PopUp />
     </main>
   );
 }
