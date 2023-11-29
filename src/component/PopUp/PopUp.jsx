@@ -23,7 +23,7 @@ function PopUp(props) {
 
   const timeout = setTimeout(() => {
     setIsPopUp(true);
-  }, 50000);
+  }, 100000);
 
   // clearTimeout(timeout);
 
