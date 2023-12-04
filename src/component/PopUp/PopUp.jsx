@@ -19,13 +19,19 @@ import popup5 from "public/popup5.png";
 
 function PopUp(props) {
   const [isPopUp, setIsPopUp] = useState(false);
+  const [isInternal, setInternal] = useState(false);
   const [form] = useForm();
 
-  const timeout = setTimeout(() => {
-    setIsPopUp(true);
-  }, 100000);
-
-  // clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const popup =
+      !isPopUp && !isInternal
+        ? setInterval(() => {
+            setIsPopUp(true);
+          }, 5000)
+        : undefined;
+    return () => clearInterval(popup);
+  }, [isPopUp]);
 
   const onFinish = async (values) => {
     registerAuthen(values).then((res) => {
@@ -57,7 +63,7 @@ function PopUp(props) {
         open={isPopUp}
         onCancel={() => {
           setIsPopUp(false);
-          console.log("hủy");
+          setInternal(true);
         }}
         width={800}
         footer={[]}

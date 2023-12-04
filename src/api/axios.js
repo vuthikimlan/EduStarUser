@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const base_url = "https://api.edustar.com.vn"
+const base_url = "https://service.edustar.com.vn"
 
 const login_path = "/auth/login"
 
