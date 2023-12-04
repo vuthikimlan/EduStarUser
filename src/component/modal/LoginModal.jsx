@@ -25,6 +25,9 @@ const LoginModal = () => {
       } else if (res?.data?.success === false) {
         message.error("Hết phiên đăng nhập");
         router.push("/");
+      } else if (res?.data?.error?.statusCode === 3) {
+        message.error("Hết phiên đăng nhập");
+        router.push("/");
       }
     });
     dispatch({ type: "modalLoginClose" });

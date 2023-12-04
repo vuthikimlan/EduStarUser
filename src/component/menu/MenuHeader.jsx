@@ -37,7 +37,7 @@ const MenuHeader = () => {
     },
     {
       label: (
-        <Link href={`https://etestuser-4ec97.web.app/?jwt=${jwt}&id=${id}`}>
+        <Link href={`https://mocktest.edustar.com.vn/?jwt=${jwt}&id=${id}`}>
           THI THỬ{" "}
         </Link>
       ),
