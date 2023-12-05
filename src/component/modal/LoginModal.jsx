@@ -22,8 +22,8 @@ const LoginModal = () => {
         Cookies.set("id", res?.data?.data?.id);
         message.success("Đăng nhập thành công");
         router.push("/mycourse");
-      } else if (res?.data?.success === false) {
-        message.error("Hết phiên đăng nhập");
+      } else if (res?.data?.error?.statusCode === 500) {
+        message.error(res?.data?.error?.message);
         router.push("/");
       } else if (res?.data?.error?.statusCode === 3) {
         message.error("Hết phiên đăng nhập");
