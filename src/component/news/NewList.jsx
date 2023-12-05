@@ -32,21 +32,16 @@ function NewList(props) {
               key={item.id}
               href={`new/${item.id}`}
               className=" col-span-1  hover:cursor-pointer mt-[10%] mx-auto"
-              //  onClick={() =>{handleNavigate(item.title)}}
             >
-              <p className="text-[5rem] font-[600] text-[#FB9400]  my-[3%] line-clamp-2 ">
-                {item.name}
-              </p>
-              <p
-                // dangerouslySetInnerHTML={{ __html: item.content }}
-                className="text-[#333]  line-clamp-1 mb-[3rem] ml-[15px] "
-              >
-                {item?.description}
-              </p>
-              {/* <p
-                dangerouslySetInnerHTML={{ __html: item.content }}
-                className="text-[#333]  line-clamp-3 mb-[3rem]"
-              ></p> */}
+              <div>
+                <p className="text-[5rem] font-[600] text-[#FB9400]  my-[3%] line-clamp-2 ">
+                  {item.name}
+                </p>
+                <p className="text-[#333]  line-clamp-1 mb-[3rem]  ">
+                  {item?.description}
+                </p>
+              </div>
+
               <Button
                 className="block ml-auto bg-[#FB9400] hover:bg-[#ffc00d] !important"
                 type="primary"

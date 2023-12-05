@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import ButtonBanner from "../Button/Button";
 function BannerVstep({ banner }) {
-  console.log("banner", banner);
   return (
     <div className="grid bg-[#fff4e5] tablet:grid-cols-2 phone:grid-col-1 px-[10%] ">
       <div className="col-span-1 max-h-[500px] phone: tablet:block ">

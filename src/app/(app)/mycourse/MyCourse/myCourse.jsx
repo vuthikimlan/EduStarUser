@@ -20,10 +20,6 @@ function MyCourse() {
             key: "2",
             children: <MyDocs />,
           },
-          {
-            label: "Thi thử",
-            key: "3",
-          },
         ]}
       />
     </>
