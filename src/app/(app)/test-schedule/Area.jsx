@@ -37,7 +37,7 @@ async function Area() {
             </p>
 
             <p>
-              <b>Hố sơ đăng ký : </b>
+              <b>Hồ sơ đăng ký : </b>
               <ul className="list-disc ml-[5%]">
                 {item?.examRegistrationRecords.map((item, subIndex) => (
                   <li key={subIndex}>{item}</li>

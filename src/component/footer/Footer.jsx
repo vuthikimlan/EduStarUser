@@ -97,8 +97,10 @@ function Footer() {
                       <img src="/facebook-blue.png" alt="" width={30} />
                     </a>
                   </div>
-                  <h3 className="w-[30%] ml-[13px] phone:w-[30%] ">Facebook</h3>
-                  <h3 className="w-[50%]">EduStar</h3>
+                  <h3 className="w-[30%] ml-[13px] phone:w-[32%] tablet:w-[27%] ">
+                    Facebook
+                  </h3>
+                  <h3 className="w-[50%]">Ngoại ngữ EduStar</h3>
                 </div>
               </div>
 

@@ -38,7 +38,6 @@ async function Home() {
         <Carousels />
       </div>
       <div className="  mb-[5rem] max-w-[1440px] mx-[10%]">
-        {/* Tin tức mới nhất của website tiếng anh  */}
         <div className="animate__animated  animate__fadeInLeft">
           <div className=" mt-[30rem] text-[#333] grid gap-12 tablet:grid-cols-2 phone:grid-cols-1">
             <div className="col-span-1">

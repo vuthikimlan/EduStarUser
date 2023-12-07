@@ -88,7 +88,7 @@ function UploadAvatar(props) {
                 console.log("file:: ", file);
               },
             }}
-            action="https://edustar-app-demo-5bad83017071.herokuapp.com/file/upload"
+            action="https://service.edustar.com.vn/file/upload"
           />
           <Form.Item>
             <Button

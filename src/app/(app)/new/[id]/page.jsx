@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-
 import { getNewsById, getAllNews } from "@/api/apiNews";
 import Link from "next/link";
 
@@ -15,13 +14,10 @@ async function PageDetailNews({ params }) {
   let sortedNews = [];
   let latestNews = [];
   if (listNew) {
-    // console.log("thành công  ",listNew?.data?.items);
     news = listNew?.data?.items;
-
     sortedNews = news.sort(
       (a, b) => new Date(b.createdDate) - new Date(a.createdDate)
     );
-
     latestNews = sortedNews.slice(0, 7);
   }
 

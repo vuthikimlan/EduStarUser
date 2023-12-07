@@ -4,7 +4,7 @@ import axios from "./axios";
 
 
 export const getAllService = async (params) => {
-  const response = await fetch('https://api.edustar.com.vn/service/all'); 
+  const response = await fetch('https://service.edustar.com.vn/service/all'); 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -12,7 +12,7 @@ export const getAllService = async (params) => {
     return data;
 };
 export const getServiceById = async (id) => {
-  const response = await fetch(`https://api.edustar.com.vn/service/${id}`); 
+  const response = await fetch(`https://service.edustar.com.vn/service/${id}`); 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
