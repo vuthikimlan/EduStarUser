@@ -16,7 +16,6 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
-
 const MenuHeader = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -61,6 +60,8 @@ const MenuHeader = () => {
         <Link href={`https://mocktest.edustar.com.vn/?jwt=${jwt}&id=${id}`}>
           THI THỬ{" "}
         </Link>
+
+       
       ),
       key: "2",
     },
@@ -161,6 +162,7 @@ const MenuHeader = () => {
   useEffect(() => {
     setJwt(Cookies.get("jwt"));
     setId(Cookies.get("id"));
+    console.log(jwt , id);
   }, []);
 
   return (

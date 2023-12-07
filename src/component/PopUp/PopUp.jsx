@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Button, Form, Input, Modal, message, notification } from "antd";
-import React, { useContext, useEffect, useState } from "react";
-import "./Css.css";
+import { registerAuthen } from "@/api/registerAuthen";
 import {
   LockOutlined,
   MailOutlined,
@@ -11,11 +9,13 @@ import {
   RightSquareOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { Button, Form, Input, Modal, message, notification } from "antd";
 import { useForm } from "antd/lib/form/Form";
-import { registerAuthen } from "@/api/registerAuthen";
 import Image from "next/image";
 import popup3 from "public/popup3.png";
 import popup5 from "public/popup5.png";
+import { useEffect, useState } from "react";
+import "./Css.css";
 
 function PopUp(props) {
   const [isPopUp, setIsPopUp] = useState(false);
@@ -61,6 +61,7 @@ function PopUp(props) {
     <div>
       <Modal
         open={isPopUp}
+        
         onCancel={() => {
           setIsPopUp(false);
           setInternal(true);
