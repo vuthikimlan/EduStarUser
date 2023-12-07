@@ -10,14 +10,14 @@ import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 // import logo from "../../../public/logo.jpg";
 import logo from "../../../public/logoCamTrongSuot.png";
 
 function Header() {
   const { data, dispatch } = useContext(AppContext);
-  // console.log("dispatch", dispatch);
   const router = useRouter();
+  const pathname = usePathname();
   const [check, setCheck] = useState("");
 
   const jwt = Cookies.get("jwt");
@@ -40,6 +40,14 @@ function Header() {
     if (e.key == 2) {
       showModalLogin();
     }
+  };
+
+  const checkPathname = () => {
+    const pathMapping = {
+      "/mycourse": "3",
+      "/user": "4",
+    };
+    return pathMapping[pathname];
   };
 
   const items = [
@@ -104,9 +112,6 @@ function Header() {
                   EduStar
                 </h2>
               </div>
-              {/* <p className="w-[65rem] my-[5px] text-[#fb9400] ">
-                Make English become your power
-              </p> */}
             </div>
 
             <MenuHeader />
@@ -117,6 +122,7 @@ function Header() {
               menu={{
                 items,
                 onClick,
+                defaultSelectedKeys: checkPathname(),
               }}
               trigger={["click"]}
               arrow

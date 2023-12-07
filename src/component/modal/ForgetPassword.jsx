@@ -11,6 +11,8 @@ const ForgetPassword = () => {
     forgotPassword(values).then((res) => {
       if (res?.data?.success) {
         message.success("Vui lòng kiểm tra email");
+      } else if (res?.data?.error?.statusCode === 500) {
+        message.error(res?.data?.error?.message);
       }
     });
     dispatch({ type: "modalForgetPasswordClose" });
@@ -47,14 +49,14 @@ const ForgetPassword = () => {
           onFinish={onFinish}
         >
           <h3 className="my-[3%] mx-auto">
-            Nhập vào email hoặc số điện thoại của bạn để lấy lại mật khẩu.
+            Nhập vào email của bạn để lấy lại mật khẩu.
           </h3>
           <Form.Item
             name="email"
             rules={[
               {
                 required: true,
-                message: "Vui lòng nhập email hoặc số điện thoại của bạn.",
+                message: "Vui lòng nhập email của bạn.",
               },
               {
                 type: "email",

@@ -18,29 +18,20 @@ import { useEffect, useState } from "react";
 import "./Css.css";
 
 function PopUp(props) {
-
-
-
-
-
   const [isPopUp, setIsPopUp] = useState(false);
   const [isInternal, setInternal] = useState(false);
   const [form] = useForm();
-  
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() =>{
-    const popup = !isPopUp && !isInternal ? 
-    setInterval(() =>{
-      setIsPopUp(true)
-    }, 5000)
-    : undefined;
-    return () => clearInterval(popup)
-  }, [isPopUp])
-
-  
-
-  // clearTimeout(timeout);
+  useEffect(() => {
+    const popup =
+      !isPopUp && !isInternal
+        ? setInterval(() => {
+            setIsPopUp(true);
+          }, 5000)
+        : undefined;
+    return () => clearInterval(popup);
+  }, [isPopUp]);
 
   const onFinish = async (values) => {
     registerAuthen(values).then((res) => {
@@ -73,29 +64,28 @@ function PopUp(props) {
         
         onCancel={() => {
           setIsPopUp(false);
-          setInternal(true)
-          console.log("hủy");
+          setInternal(true);
         }}
         width={800}
         footer={[]}
       >
-        <div className="flex h-[106rem] ">
-          <div className=" mt-[10px] ">
-            <div className="flex">
+        <div className="laptop:flex laptop:h-[106rem]  phone:block phone:h-[112rem] ">
+          <div className=" mt-[10px] phone:relative phone:bottom-[30px] tablet:left-[30rem] laptop:left-[15rem] ">
+            <div className="flex desktop:relative desktop:right-[24px] ">
               <img
                 src="/logoCamTrongSuot.png"
                 alt=""
-                className=" w-[50rem] relative top-[-15rem] left-[-10rem] "
+                className=" laptop:w-[45rem] relative laptop:top-[-7rem]  laptop:left-[-10rem] phone:w-[30rem] phone:top-[-10px] phone:left-[26px]  "
               />
-              <h2 className="text-[50px] font-normal text-[#fb9400] relative right-[26rem] top-[25px] ">
+              <h2 className="laptop:text-[45px] phone:text-[30px] font-normal text-[#fb9400] relative laptop:right-[26rem] laptop:top-[57px] phone:right-[4rem] phone:top-[35px] ">
                 EduStar
               </h2>
             </div>
-            <p className=" text-[#fb9400] text-[30px] relative bottom-[26rem] left-[23px] ">
+            <p className=" text-[#fb9400] laptop:text-[30px] laptop:w-[80%] phone:text-[15px] relative laptop:bottom-[19rem] laptop:left-[-12px] phone:bottom-[11rem] phone:left-[10rem]  ">
               Make English become your power
             </p>
-            <div className="relative bottom-[18rem] ml-[18px] ">
-              <h1 className="text-[6rem] mb-[15px] ">Đăng ký ngay để: </h1>
+            <div className="laptop:relative laptop:bottom-[18rem] ml-[18px] phone:hidden laptop:inline ">
+              <h1 className="text-[6rem] mb-[15px]  ">Đăng ký ngay để: </h1>
               <div className="flex mb-[10px] ">
                 <RightSquareOutlined className="text-[#F69050] mr-[5px] " />
 
@@ -107,18 +97,15 @@ function PopUp(props) {
                 <p>Nhận thêm nhiều bài thi thử</p>
               </div>
             </div>
-            {/* Nhận thêm tài liệu và các bài thi thử
-             */}
             <Image
               src={popup3}
               height={289}
               width={157}
-              className=" w-[289px]  m-[0] relative left-[16px] bottom-[110px] "
+              className=" w-[289px]  m-[0] relative left-[16px] bottom-[110px] phone:hidden laptop:inline "
             />
-
-            {/* <p>Nhanh tay đăng ký để nhận được những ưu đãi sớm nhất từ EduStar</p> */}
           </div>
-          <div className="w-[50%] ml-[20rem] ">
+          {/* w-[50%] ml-[20rem] */}
+          <div className=" phone:relative phone:bottom-[16rem] laptop:top-[10px] ">
             <Form
               className="login-form"
               initialValues={{
@@ -127,7 +114,7 @@ function PopUp(props) {
               onFinish={onFinish}
               form={form}
             >
-              <h1 className=" font-bold text-7xl text-center mb-[20px] text-[#FB9400] mt-[11px] uppercase ">
+              <h1 className=" font-bold text-7xl text-center mb-[20px] text-[#FB9400] mt-[11px] uppercase  phone:relative phone:right-[0px] tablet:right-[1px] ">
                 Đăng ký ngay bây giờ
               </h1>
               <Form.Item
@@ -197,7 +184,7 @@ function PopUp(props) {
                 <Button
                   type="primary"
                   htmlType="submit"
-                  className=" bg-[#FB9400] w-[94rem] "
+                  className=" bg-[#FB9400] w-[94rem] phone:w-[50rem] phone:relative phone:right-[10rem] phone:bottom-[7px] tablet:right-[26rem] tablet:w-[80rem] laptop:right-[0rem] "
                 >
                   Đăng ký
                 </Button>
@@ -209,7 +196,7 @@ function PopUp(props) {
               alt="icon"
               height={140}
               width={157}
-              className=" relative bottom-[61rem] left-[92rem] "
+              className=" relative laptop:bottom-[63rem] laptop:left-[78rem] phone:hidden laptop:inline "
             />
           </div>
         </div>

@@ -3,7 +3,8 @@ import { AppContext } from "../AppContext/AppContext";
 import React, { useState, useContext, useEffect } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import { Dropdown, Menu } from "antd";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
 import RegisterAccountModal from "../modal/RegisterAccountModal";
 import Cookies from "js-cookie";
 import Link from "next/link";
@@ -17,7 +18,7 @@ function getItem(label, key, icon, children) {
 }
 const MenuHeader = () => {
   const router = useRouter();
-  
+  const pathname = usePathname();
 
   const [jwt, setJwt] = useState(null);
   const [id, setId] = useState(null);
@@ -25,6 +26,25 @@ const MenuHeader = () => {
   const { data, dispatch } = useContext(AppContext);
   const showModalRegisterAcc = () => {
     dispatch({ type: "modalRegisterAccOpen" });
+  };
+
+  const checkPathname = () => {
+    const pathMapping = {
+      "/": "1",
+      "/vstep": "3",
+      "/vstep/luyen-thi-b1": "4",
+      "/vstep/luyen-thi-b2": "5",
+      "/toeic": "6",
+      "/ielts": "7",
+      "/aptis": "8",
+      "/aptis/luyen-thi-b1": "9",
+      "/aptis/luyen-thi-b2": "10",
+      "/englishacademic": "11",
+      "/test-schedule": "12",
+      "/study-schedule": "13",
+      "/new": "14",
+    };
+    return pathMapping[pathname];
   };
 
   const items = [
@@ -37,10 +57,7 @@ const MenuHeader = () => {
     },
     {
       label: (
-        <Link href={`http://localhost:3001/?jwt=${Cookies.get("jwt")}&id=${Cookies.get("id")}`}>
-        {/* <Link
-          href={`http://localhost:3001/?jwt=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEb2NoaWVuaHAyMDAyIiwiWEFVVEhPUiI6IkNVU1RPTUVSIiwiaWF0IjoxNzAxNTg5MDQ4LCJleHAiOjE3MDE2MjUwNDh9.ZTk9EIKz3fwjL_O-8njHmuQfm_qOhVQk85k5K73LehURtI3x_3uYD5nYAp1mdELN4vJ99Tahs3M5IYq9Tcyi-Q&id=246`}
-        > */}
+        <Link href={`https://mocktest.edustar.com.vn/?jwt=${jwt}&id=${id}`}>
           THI THỬ{" "}
         </Link>
 
@@ -159,7 +176,8 @@ const MenuHeader = () => {
         className="font-[500] items-center w-[70vw] phone:hidden tablet:hidden desktop:flex laptop:hidden  "
         mode="horizontal"
         items={items}
-      ></Menu>
+        defaultSelectedKeys={checkPathname}
+      />
       <Dropdown
         menu={{
           items,

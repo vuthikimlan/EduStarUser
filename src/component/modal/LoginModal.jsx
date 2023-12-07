@@ -16,12 +16,18 @@ const LoginModal = () => {
 
   const onFinish = async (values) => {
     login(values).then((res) => {
-      if (res.status === 200) {
+      if (res?.data?.success === true) {
         dispatch({ type: "isLogin", payload: true });
         Cookies.set("jwt", res?.data?.data?.jwt);
         Cookies.set("id", res?.data?.data?.id);
         message.success("Đăng nhập thành công");
         router.push("/mycourse");
+      } else if (res?.data?.error?.statusCode === 500) {
+        message.error(res?.data?.error?.message);
+        router.push("/");
+      } else if (res?.data?.error?.statusCode === 3) {
+        message.error("Hết phiên đăng nhập");
+        router.push("/");
       }
     });
     dispatch({ type: "modalLoginClose" });

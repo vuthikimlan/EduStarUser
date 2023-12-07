@@ -91,7 +91,7 @@ function Footer() {
                 <div className="flex items-center mb-[3rem] ">
                   <div>
                     <a
-                      href="https://www.facebook.com/ngoaingu.etest"
+                      href="https://www.facebook.com/ngoaingu.edustar"
                       className="w-[10%]"
                     >
                       <img src="/facebook-blue.png" alt="" width={30} />
