@@ -15,9 +15,9 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
-
 const MenuHeader = () => {
   const router = useRouter();
+  
 
   const [jwt, setJwt] = useState(null);
   const [id, setId] = useState(null);
@@ -37,9 +37,14 @@ const MenuHeader = () => {
     },
     {
       label: (
-        <Link href={`https://etestuser-4ec97.web.app/?jwt=${jwt}&id=${id}`}>
+        <Link href={`http://localhost:3001/?jwt=${Cookies.get("jwt")}&id=${Cookies.get("id")}`}>
+        {/* <Link
+          href={`http://localhost:3001/?jwt=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEb2NoaWVuaHAyMDAyIiwiWEFVVEhPUiI6IkNVU1RPTUVSIiwiaWF0IjoxNzAxNTg5MDQ4LCJleHAiOjE3MDE2MjUwNDh9.ZTk9EIKz3fwjL_O-8njHmuQfm_qOhVQk85k5K73LehURtI3x_3uYD5nYAp1mdELN4vJ99Tahs3M5IYq9Tcyi-Q&id=246`}
+        > */}
           THI THỬ{" "}
         </Link>
+
+       
       ),
       key: "2",
     },
@@ -140,6 +145,7 @@ const MenuHeader = () => {
   useEffect(() => {
     setJwt(Cookies.get("jwt"));
     setId(Cookies.get("id"));
+    console.log(jwt , id);
   }, []);
 
   return (
