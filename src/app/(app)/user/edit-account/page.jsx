@@ -30,7 +30,7 @@ function PageEditAccount(props) {
         <Image
           src={pic}
           alt="pic"
-          width={532}
+          width={600}
           height={957}
           className="tablet:block hidden"
         />
@@ -105,15 +105,6 @@ function PageEditAccount(props) {
               </div>
 
               <div className="flex justify-end mr-[10rem] mb-[5%] ">
-                {/* <Button
-                  type="default"
-                  className=" hover:opacity-80   mr-[4rem] px-[5rem]"
-                  onClick={() => {
-                    form.resetFields();
-                  }}
-                >
-                  Hủy
-                </Button> */}
                 <Link
                   href="/user"
                   className=" hover:opacity-80 mr-[4rem] px-[5rem] border-solid	rounded-[2rem] border-gray-800 hover:border-sky-950 border-[1px] px-[5rem] "
@@ -124,7 +115,6 @@ function PageEditAccount(props) {
                   type="primary"
                   htmlType="submit"
                   className="bg-[#FB9400]  hover:opacity-80  px-[5rem]"
-                  // onClick={handleSubmit}
                 >
                   Cập nhật
                 </Button>
