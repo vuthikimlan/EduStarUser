@@ -81,7 +81,7 @@ function Footer() {
                 <div className="flex items-center mb-[3rem] laptop:grid-cols-2">
                   <EnvironmentFilled className="text-[7rem] w-[10%] text-[#F69050]" />
                   <h3 className="w-[30%] phone:w-[25%]">Điạ chỉ</h3>
-                  <h3 className="w-[51%]"> Công ty Anh ngữ Edustar</h3>
+                  <h3 className="w-[51%]"> Công ty Cổ phần Giáo dục EduStar</h3>
                 </div>
                 <div className="flex items-center mb-[3rem]">
                   <MailOutlined className="text-[7rem] w-[10%] text-[#F69050]" />

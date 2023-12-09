@@ -29,6 +29,12 @@ const LoginModal = () => {
         message.error("Hết phiên đăng nhập");
         router.push("/");
       }
+      const checkPermission = res?.data?.data?.roles?.at(0);
+      if (checkPermission === "CUSTOMER") {
+        router.push("/mycourse");
+      } else {
+        message.error("Bạn không có quyền đăng nhập");
+      }
     });
     dispatch({ type: "modalLoginClose" });
   };

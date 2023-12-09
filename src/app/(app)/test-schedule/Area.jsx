@@ -35,6 +35,14 @@ async function Area() {
                 ))}
               </ul>
             </p>
+            <p>
+              <b>Ngày dự thi : </b>
+              {item?.examTime}
+            </p>
+            <p>
+              <b>Hạn đăng ký : </b>
+              {item?.registrationTerm}
+            </p>
 
             <p>
               <b>Hồ sơ đăng ký : </b>

@@ -11,17 +11,7 @@ async function IeltsIntro() {
   if (data) {
     adList = data?.data?.items.slice(19, 25);
   }
-  // const [adList, setAdList] = useState([]);
 
-  // useEffect(() => {
-  //   getDataDisplay()
-  //     .then((data) => {
-  //       setAdList(data?.data?.items.slice(19, 25));
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  // }, []);
   return (
     <div className="grid tablet:gap-24 desktop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1 justify-between ">
       {adList.map((item, index) => (

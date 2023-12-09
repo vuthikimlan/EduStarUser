@@ -38,18 +38,25 @@ const RegisterModal = () => {
 
         form.resetFields();
       } else if (res?.data?.error?.statusCode === 500) {
-        message.error(res?.data?.error?.message);
+        message.open({
+          type: "error",
+          content: res?.data?.error?.message,
+          duration: 10,
+        });
         form.resetFields();
       } else if (res?.data?.error?.statusCode === 2) {
         {
           res?.data?.error?.errorDetailList.map((e) =>
-            message.error(e.message)
+            message.open({
+              type: "error",
+              content: e.message,
+              duration: 15,
+            })
           );
         }
         form.resetFields();
       }
     });
-    ////đặt thông báo đkí thông tin thành công
     dispatch({ type: "modalRegisterClose" });
   };
 
