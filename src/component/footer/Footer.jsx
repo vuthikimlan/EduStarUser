@@ -60,7 +60,7 @@ function Footer() {
                 <img
                   src="/logoCamTrongSuot.png"
                   alt=""
-                  className="  h-[38rem] w-[50rem] relative left-[-6px] top-[-9px] phone:w-[37rem] phone:left-[-20px] " //phone:hidden
+                  className="  h-[38rem] w-[50rem] relative left-[-6px] top-[-9px] phone:w-[37rem] phone:left-[-32px] " //phone:hidden
                 />
                 <h2 className=" mb-[6px] text-[#fb9400] mt-[54px] text-8xl font-medium absolute  phone:left-[22rem] tablet:left-[24rem] laptop:left-[31rem]">
                   EduStar
@@ -74,17 +74,20 @@ function Footer() {
             <div className=" ml-[28rem] row-span-1 grid laptop:grid-cols-3  phone:ml-[7rem] laptop:ml-[10rem] ">
               <div className=" col-span-1  ">
                 <div className="flex  items-center mb-[3rem] ">
-                  <PhoneOutlined className="text-[7rem] w-[10%] text-[#F69050]" />
+                  <PhoneOutlined className="text-[7rem] w-[12%] text-[#F69050]" />
                   <h3 className="w-[30%] phone:w-[25%] "> Liên hệ</h3>
-                  <h3 className="w-[38%] phone:w-[52%] "> +84 0986 511 750</h3>
+                  <h3 className="w-[38%] phone:w-[62%] ">
+                    {" "}
+                    0978 476 980 hoặc 0961 174 239
+                  </h3>
                 </div>
                 <div className="flex items-center mb-[3rem] laptop:grid-cols-2">
-                  <EnvironmentFilled className="text-[7rem] w-[10%] text-[#F69050]" />
-                  <h3 className="w-[30%] phone:w-[25%]">Điạ chỉ</h3>
-                  <h3 className="w-[51%]"> Công ty Cổ phần Giáo dục EduStar</h3>
+                  <EnvironmentFilled className="text-[7rem] w-[12%] text-[#F69050]" />
+                  <h3 className="w-[30%] phone:w-[25%]">Địa chỉ</h3>
+                  <h3 className="w-[64%]"> Công ty Cổ phần Giáo dục EduStar</h3>
                 </div>
                 <div className="flex items-center mb-[3rem]">
-                  <MailOutlined className="text-[7rem] w-[10%] text-[#F69050]" />
+                  <MailOutlined className="text-[7rem] w-[12%] text-[#F69050]" />
                   <h3 className="w-[30%] phone:w-[25%]">Email</h3>
                   <h3 className="w-[50%]">edustar1910@gmail.com</h3>
                 </div>
@@ -97,7 +100,7 @@ function Footer() {
                       <img src="/facebook-blue.png" alt="" width={30} />
                     </a>
                   </div>
-                  <h3 className="w-[30%] ml-[13px] phone:w-[32%] tablet:w-[27%] ">
+                  <h3 className="w-[30%] ml-[23px] phone:w-[32%] tablet:w-[25%] ">
                     Facebook
                   </h3>
                   <h3 className="w-[50%]">Ngoại ngữ EduStar</h3>
