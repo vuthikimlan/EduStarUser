@@ -20,13 +20,9 @@ const DownloadDocument = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
-  // console.log("freeDocument", listFreeDocument);
+
   const showDocumentDownload = async () => {
     dispatch({ type: "modalDownloadOpen" });
-
-    // const res = await getAllDocument().then((data) => data);
-    // console.log("res:: ", res?.data?.items);
-    // dispatch({ type: "getDocument", payload: res?.data?.items });
   };
 
   const handleCancelDownload = () => {
