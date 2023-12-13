@@ -12,7 +12,7 @@ function ButtonBanner(props) {
   return (
     <div>
       <Button
-        className="custom-btn "
+        className="custom-btn bg-[#fb9400] text-white  "
         onClick={() => {
           showModalConsulting();
         }}

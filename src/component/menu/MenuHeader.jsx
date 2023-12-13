@@ -29,22 +29,45 @@ const MenuHeader = () => {
   };
 
   const checkPathname = () => {
-    const pathMapping = {
-      "/": "1",
-      "/vstep": "3",
-      "/vstep/luyen-thi-b1": "4",
-      "/vstep/luyen-thi-b2": "5",
-      "/toeic": "6",
-      "/ielts": "7",
-      "/aptis": "8",
-      "/aptis/luyen-thi-b1": "9",
-      "/aptis/luyen-thi-b2": "10",
-      "/englishacademic": "11",
-      "/test-schedule": "12",
-      "/study-schedule": "13",
-      "/new": "14",
-    };
-    return pathMapping[pathname];
+    if (pathname.includes("/")) {
+      return "1";
+    }
+    if (pathname.includes("/vstep")) {
+      return "3";
+    }
+    if (pathname.includes("/vstep/luyen-thi-b1")) {
+      return "4";
+    }
+    if (pathname.includes("/vstep/luyen-thi-b2")) {
+      return "5";
+    }
+    if (pathname.includes("/toeic")) {
+      return "6";
+    }
+    if (pathname.includes("/ielts")) {
+      return "7";
+    }
+    if (pathname.includes("/aptis")) {
+      return "8";
+    }
+    if (pathname.includes("/aptis/luyen-thi-b1")) {
+      return "9";
+    }
+    if (pathname.includes("/aptis/luyen-thi-b2")) {
+      return "10";
+    }
+    if (pathname.includes("/englishacademic")) {
+      return "11";
+    }
+    if (pathname.includes("/test-schedule")) {
+      return "12";
+    }
+    if (pathname.includes("/study-schedule")) {
+      return "13";
+    }
+    if (pathname.includes("/new")) {
+      return "14";
+    }
   };
 
   const items = [
@@ -60,8 +83,6 @@ const MenuHeader = () => {
         <Link href={`https://mocktest.edustar.com.vn/?jwt=${jwt}&id=${id}`}>
           THI THỬ{" "}
         </Link>
-
-       
       ),
       key: "2",
     },
@@ -162,7 +183,7 @@ const MenuHeader = () => {
   useEffect(() => {
     setJwt(Cookies.get("jwt"));
     setId(Cookies.get("id"));
-    console.log(jwt , id);
+    console.log(jwt, id);
   }, []);
 
   return (

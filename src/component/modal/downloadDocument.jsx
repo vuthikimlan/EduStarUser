@@ -45,7 +45,10 @@ const DownloadDocument = () => {
   return (
     <>
       <div className="mx-[10%] ">
-        <Button className="custom-btn " onClick={showDocumentDownload}>
+        <Button
+          className="custom-btn bg-[#fb9400] text-white  "
+          onClick={showDocumentDownload}
+        >
           Download tài liệu
         </Button>
       </div>
@@ -81,7 +84,7 @@ const DownloadDocument = () => {
                 )}
                 <Button
                   href={item.file}
-                  className="custom-btn ml-[5%] flex items-center"
+                  className="custom-btn ml-[5%] flex items-center bg-[#fb9400] text-white "
                 >
                   <DownloadOutlined />
                   Download
