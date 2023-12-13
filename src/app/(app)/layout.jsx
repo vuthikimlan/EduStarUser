@@ -12,6 +12,8 @@ import Script from "next/script";
 import { ConfigProvider } from "antd";
 import vinVN from "antd/locale/vi_VN";
 import PluginChat from "@/component/pluginChat/PluginChat";
+import StyledComponentsRegistry from "../../lib/AntdRegistry";
+import theme from "../../theme/themeConfig";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,7 +47,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AppProvider>
           <Header />
-          <ConfigProvider locale={vinVN}>{children}</ConfigProvider>
+          <ConfigProvider locale={vinVN} theme={theme}>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </ConfigProvider>
           <PluginChat />
           <Footer />
         </AppProvider>

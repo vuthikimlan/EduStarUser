@@ -19,17 +19,6 @@ export default function Sliders() {
         console.error("Error fetching data:", error);
       });
   }, []);
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const display = await getDataDisplay();
-  //     if (display) {
-  //       setSlideList(display?.data?.items.slice(9, 14));
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
-  // console.log("object slideList", slideList);
-  // { slideList }
   return (
     <>
       <Swiper

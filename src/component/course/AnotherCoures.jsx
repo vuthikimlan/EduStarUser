@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { getDataDisplay } from "@/api/apiDisplay";
 import Link from "next/link";
-// { anotherCoures }
 function AnotherCoures() {
   const [anotherCoures, setAnotherCoures] = useState([]);
 
@@ -55,16 +54,14 @@ function AnotherCoures() {
                 span={22}
                 className="hover:scale-x-[1.2] hover:scale-y-[1.3] h-[450px] hover:delay-100 hover:duration-300 hover:ease-in-out"
               >
-                <Link href="aaa" >
-                  <img
-                    src={item.image}
-                    alt="anh"
-                    className="w-full h-[300px] object-cover rounded-tl-[5px] rounded-tr-[5px] "
-                  />
-                  <h2 className="text-center font-[600] text-[4rem] text-[#333] bg-[#FFF4E5] py-[5rem] ">
-                    {item.title}
-                  </h2>
-                </Link>
+                <img
+                  src={item.image}
+                  alt="anh"
+                  className="w-full h-[300px] object-cover rounded-tl-[5px] rounded-tr-[5px] "
+                />
+                <h2 className="text-center font-[600] text-[4rem] text-[#333] bg-[#FFF4E5] py-[5rem] ">
+                  {item.title}
+                </h2>
               </Col>
             </SwiperSlide>
           ))}

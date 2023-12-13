@@ -36,6 +36,7 @@ async function Home() {
     <main className="bg-[#fff] mx-[auto]">
       <div className=" ">
         <Carousels />
+        {/* banner={banner}  */}
       </div>
       <div className="  mb-[5rem] max-w-[1440px] mx-[10%]">
         <div className="animate__animated  animate__fadeInLeft">
@@ -88,7 +89,6 @@ async function Home() {
           <FormRegister />
         </div>
 
-        {/* Giới thiệu đội ngũ giảng viên  */}
         <div className="text-[#333]">
           <h2 className="text-[8rem] font-[500] text-center my-[10rem] break-before-column text-[#f79500]">
             Đội ngũ giảng viên
