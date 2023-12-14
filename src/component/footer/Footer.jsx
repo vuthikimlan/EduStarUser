@@ -74,22 +74,30 @@ function Footer() {
             <div className=" ml-[28rem] row-span-1 grid laptop:grid-cols-3  phone:ml-[7rem] laptop:ml-[10rem] ">
               <div className=" col-span-1  ">
                 <div className="flex  items-center mb-[3rem] ">
-                  <PhoneOutlined className="text-[7rem] w-[12%] text-[#F69050]" />
-                  <h3 className="w-[30%] phone:w-[25%] "> Liên hệ</h3>
-                  <h3 className="w-[38%] phone:w-[62%] ">
+                  <PhoneOutlined className="text-[7rem] w-[17%] text-[#F69050]" />
+                  <h3 className="w-[30%] phone:w-[25%] text-[16px] ">
+                    {" "}
+                    Liên hệ
+                  </h3>
+                  <h3 className="w-[38%] phone:w-[70%] text-[16px] ">
                     {" "}
                     0978 476 980 hoặc 0961 174 239
                   </h3>
                 </div>
                 <div className="flex items-center mb-[3rem] laptop:grid-cols-2">
-                  <EnvironmentFilled className="text-[7rem] w-[12%] text-[#F69050]" />
-                  <h3 className="w-[30%] phone:w-[25%]">Địa chỉ</h3>
-                  <h3 className="w-[64%]"> Công ty Cổ phần Giáo dục EduStar</h3>
+                  <EnvironmentFilled className="text-[7rem] w-[20%] text-[#F69050]" />
+                  <h3 className="w-[30%] phone:w-[31%] text-[16px]">Địa chỉ</h3>
+                  <h3 className="w-[85%] text-[16px]">
+                    {" "}
+                    Công ty Cổ phần Giáo dục EduStar
+                  </h3>
                 </div>
                 <div className="flex items-center mb-[3rem]">
-                  <MailOutlined className="text-[7rem] w-[12%] text-[#F69050]" />
-                  <h3 className="w-[30%] phone:w-[25%]">Email</h3>
-                  <h3 className="w-[50%]">edustar1910@gmail.com</h3>
+                  <MailOutlined className="text-[7rem] w-[14%] text-[#F69050]" />
+                  <h3 className="w-[30%] phone:w-[24%] text-[16px]">Email</h3>
+                  <h3 className="w-[50%] text-[16px] ">
+                    edustar1910@gmail.com
+                  </h3>
                 </div>
                 <div className="flex items-center mb-[3rem] ">
                   <div>
@@ -100,15 +108,15 @@ function Footer() {
                       <img src="/facebook-blue.png" alt="" width={30} />
                     </a>
                   </div>
-                  <h3 className="w-[30%] ml-[23px] phone:w-[32%] tablet:w-[25%] ">
+                  <h3 className="w-[30%] ml-[26px] phone:w-[32%] tablet:w-[24%] text-[16px] ">
                     Facebook
                   </h3>
-                  <h3 className="w-[50%]">Ngoại ngữ EduStar</h3>
+                  <h3 className="w-[50%] text-[16px] ">Ngoại ngữ EduStar</h3>
                 </div>
               </div>
 
               <div className="col-span-1 w-[70rem] mb-[20px] mt-[0] ml-[auto] ">
-                <h2 className="text-[#F69050]">Dịch vụ</h2>
+                <h2 className="text-[#F69050] ">Dịch vụ</h2>
                 <div className="flex ">
                   <RightSquareOutlined className="text-[#F69050] mr-[5px] " />
                   <a href="/vstep" className="text-[#7B7B7D]">
