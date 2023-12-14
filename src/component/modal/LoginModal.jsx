@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import { login } from "@/api/login";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-
+import { useForm } from "antd/lib/form/Form";
 import Image from "next/image";
 import balo from "public/world_book_fun_fb_06 [Converted]-04 1.svg";
 
@@ -13,27 +13,32 @@ const LoginModal = () => {
   const { data, dispatch } = useContext(AppContext);
   const { modalLoginOpen } = data;
   const router = useRouter();
+  const [form] = useForm();
 
   const onFinish = async (values) => {
     login(values).then((res) => {
       if (res?.data?.success === true) {
         dispatch({ type: "isLogin", payload: true });
-        Cookies.set("jwt", res?.data?.data?.jwt);
-        Cookies.set("id", res?.data?.data?.id);
-        message.success("Đăng nhập thành công");
-        router.push("/mycourse");
+        const checkPermission = res?.data?.data?.roles?.at(0);
+        if (checkPermission === "CUSTOMER") {
+          Cookies.set("jwt", res?.data?.data?.jwt);
+          Cookies.set("id", res?.data?.data?.id);
+          message.success("Đăng nhập thành công");
+          form.resetFields();
+          router.push("/mycourse");
+        } else {
+          form.resetFields();
+          message.error("Bạn không có quyền đăng nhập");
+        }
+        // router.push("/mycourse");
       } else if (res?.data?.error?.statusCode === 500) {
         message.error(res?.data?.error?.message);
+        form.resetFields();
         router.push("/");
       } else if (res?.data?.error?.statusCode === 3) {
         message.error("Hết phiên đăng nhập");
+        form.resetFields();
         router.push("/");
-      }
-      const checkPermission = res?.data?.data?.roles?.at(0);
-      if (checkPermission === "CUSTOMER") {
-        router.push("/mycourse");
-      } else {
-        message.error("Bạn không có quyền đăng nhập");
       }
     });
     dispatch({ type: "modalLoginClose" });

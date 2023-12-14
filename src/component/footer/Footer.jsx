@@ -152,7 +152,6 @@ function Footer() {
                 </div>
               </div>
             </div>
-            {/* border-[1px] border-solid border-transparent */}
           </div>
         </div>
       </div>

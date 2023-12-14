@@ -11,8 +11,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { usePathname, useRouter } from "next/navigation";
-// import logo from "../../../public/logo.jpg";
-import logo from "../../../public/logoCamTrongSuot.png";
 
 function Header() {
   const { data, dispatch } = useContext(AppContext);
