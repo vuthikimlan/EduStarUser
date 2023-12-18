@@ -93,8 +93,8 @@ function Footer() {
                   </h3>
                 </div>
                 <div className="flex items-center mb-[3rem]">
-                  <MailOutlined className="text-[7rem] w-[14%] text-[#F69050]" />
-                  <h3 className="w-[30%] phone:w-[24%] text-[16px]">Email</h3>
+                  <MailOutlined className="text-[7rem] w-[14.8%] text-[#F69050]" />
+                  <h3 className="w-[30%] phone:w-[22.8%] text-[16px]">Email</h3>
                   <h3 className="w-[50%] text-[16px] ">
                     edustar1910@gmail.com
                   </h3>
@@ -108,7 +108,7 @@ function Footer() {
                       <img src="/facebook-blue.png" alt="" width={30} />
                     </a>
                   </div>
-                  <h3 className="w-[30%] ml-[26px] phone:w-[32%] tablet:w-[24%] text-[16px] ">
+                  <h3 className="w-[30%] ml-[37px] phone:w-[32%] tablet:w-[23%] text-[16px] ">
                     Facebook
                   </h3>
                   <h3 className="w-[50%] text-[16px] ">Ngoại ngữ EduStar</h3>

@@ -10,7 +10,9 @@ function NewList(props) {
   useEffect(() => {
     getAllNews()
       .then((data) => {
-        setNewList(data?.data?.items);
+        const dataNews = data?.data?.items;
+        const sortedNews = dataNews.sort((a, b) => b.id - a.id);
+        setNewList(sortedNews);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);

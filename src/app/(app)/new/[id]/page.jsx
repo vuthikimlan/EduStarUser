@@ -2,6 +2,7 @@
 import React from "react";
 import { getNewsById, getAllNews } from "@/api/apiNews";
 import Link from "next/link";
+import NewItem from "../../../../component/news/NewItem";
 
 async function PageDetailNews({ params }) {
   const { id } = params;
@@ -15,17 +16,16 @@ async function PageDetailNews({ params }) {
   let latestNews = [];
   if (listNew) {
     news = listNew?.data?.items;
-    sortedNews = news.sort(
-      (a, b) => new Date(b.createdDate) - new Date(a.createdDate)
-    );
-    latestNews = sortedNews.slice(0, 7);
+    sortedNews = news.sort((a, b) => b.id - a.id);
+    latestNews = sortedNews.slice(0, 6);
   }
 
   return (
     <div className="mx-auto max-w-[1440px]">
       <div className="grid laptop:grid-cols-3  gap-[2rem] my-[6%]">
         <div className="laptop:col-span-2  m-[5rem]">
-          <div dangerouslySetInnerHTML={{ __html: itemNew?.content }}></div>
+          {/* <div dangerouslySetInnerHTML={{ __html: itemNew?.content }}></div> */}
+          <NewItem params={params} />
         </div>
         <div className="col-span-1">
           {latestNews.map((item, index) => (
