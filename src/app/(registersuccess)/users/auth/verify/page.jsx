@@ -1,24 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-"use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { verifyEmail } from "../../../../../api/registerAuthen";
-import { message } from "antd";
 
-function RegisterSuccess(request) {
+async function RegisterSuccess(request) {
   const params = request?.searchParams["email-verification"];
-  const [isVerified, setIsVerified] = useState(true);
 
-  useEffect(() => {
-    verifyEmail(params).then((res) => {
-      if (res?.data?.success) {
-        setIsVerified(res?.data?.success);
-      } else if (res?.data?.statusCode === 500) {
-        setIsVerified(res?.data?.success);
-      }
-    });
-  }, [params]);
+  const getIsVerified = async function getData() {
+    const res = await verifyEmail(params);
+    if (res?.data?.success) {
+      return res?.data?.success;
+    } else if (res?.data?.statusCode === 500) {
+      return res?.data?.success;
+    }
+  };
+
+  const isVerified = await getIsVerified();
+
   return (
     <div>
       <div className="text-center my-[40rem] mx-[80rem] p-[29rem] bg-[cornsilk] rounded-[20px] border-[1px] border-solid border-transparent ">

@@ -35,7 +35,7 @@ const RegisterModal = () => {
           description: "Vui lòng kiểm tra email để xác thực",
           placement: "top",
         });
-
+        dispatch({ type: "modalRegisterClose" });
         form.resetFields();
       } else if (res?.data?.error?.statusCode === 500) {
         message.open({
@@ -57,7 +57,6 @@ const RegisterModal = () => {
         form.resetFields();
       }
     });
-    dispatch({ type: "modalRegisterClose" });
   };
 
   const handleCancel = () => {

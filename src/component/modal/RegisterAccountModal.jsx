@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Modal,
   Form,
@@ -26,6 +25,7 @@ const RegisterAccountModal = () => {
       if (res?.data?.success) {
         message.success("Đăng ký tư vấn thành công");
         form.resetFields();
+        dispatch({ type: "modalRegisterAccClose" });
       } else if (res?.data?.error?.statusCode === 2) {
         {
           res?.data?.error?.errorDetailList.map((e) =>
@@ -34,8 +34,6 @@ const RegisterAccountModal = () => {
         }
       }
     });
-    dispatch({ type: "modalRegisterAccClose" });
-    //đặt thông báo gửi thông tin thành công
   };
   const handleCancel = () => {
     dispatch({ type: "modalRegisterAccClose" });

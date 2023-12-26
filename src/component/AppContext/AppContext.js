@@ -16,8 +16,6 @@ const initialData = {
   listDataDocument: [],
   studyScheduleDetail: [],
   expand: false,
-  //   drawerOpen: false,
-  //   userID: null,
   isLogin: false
 };
 
