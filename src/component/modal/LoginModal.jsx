@@ -26,11 +26,11 @@ const LoginModal = () => {
           message.success("Đăng nhập thành công");
           form.resetFields();
           router.push("/mycourse");
+          dispatch({ type: "modalLoginClose" });
         } else {
           form.resetFields();
           message.error("Bạn không có quyền đăng nhập");
         }
-        // router.push("/mycourse");
       } else if (res?.data?.error?.statusCode === 500) {
         message.error(res?.data?.error?.message);
         form.resetFields();
@@ -39,9 +39,19 @@ const LoginModal = () => {
         message.error("Hết phiên đăng nhập");
         form.resetFields();
         router.push("/");
+      } else if (res?.data?.error?.statusCode === 2) {
+        {
+          res?.data?.error?.errorDetailList.map((e) =>
+            message.open({
+              type: "error",
+              content: e.message,
+              duration: 10,
+            })
+          );
+        }
+        form.resetFields();
       }
     });
-    dispatch({ type: "modalLoginClose" });
   };
 
   const showModalRegister = () => {
